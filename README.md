@@ -1,1 +1,1 @@
-# GeoPoints
+# geoPoints
