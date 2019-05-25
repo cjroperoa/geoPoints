@@ -1,0 +1,38 @@
+<ion-content>
+
+  <agm-map 
+    [latitude]="lat" 
+    [longitude]="lng" 
+    [zoom]="zoom" 
+    (mapClick)="click($event)"
+    (mapDoubleClick)="mapDoubleClick($event)"
+    (mapRightClick)="mapRightClick($event)"
+    [disableDoubleClickZoom]="true"
+    >
+    <agm-marker 
+      [latitude]="lat"
+      [longitude]="lng"
+      [markerDraggable]="true"
+      *ngIf=locationMark
+      >
+    <agm-marker
+    [latitude]="lat2"
+    [longitude]="lng2"
+    [markerDraggable]="true"
+    [opacity]="0.5"
+    ></agm-marker>
+        <agm-info-window>info</agm-info-window>
+    </agm-marker>
+  </agm-map>
+
+  <ion-fab vertical="bottom" horizontal="center" edge slot="fixed">
+    <ion-fab-button color="primary" size="large">
+      <ion-icon name="list-box"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
+
+<ion-footer>
+    <h1>{{ title }}</h1>
+</ion-footer>
